@@ -1,0 +1,39 @@
+@import url(./reset.css);
+@import url(./color.css);
+@import url(./type.css);
+@import url(./grid.css);
+
+
+nav {
+    background-color: var(--lavender-blue)
+}
+
+
+nav ul {
+    padding: 20px 0px 20px 40px;
+    margin: 0px auto;
+    display:flex;
+    flex-direction:column;
+
+}
+
+nav li {
+    margin: 10px 0px;
+    border-bottom: 1px solid var(--gold);
+}
+
+nav a {
+    color: var(--blue);
+}
+
+@media (min-width: 768px){
+    nav ul {
+        padding: 28px;
+        flex-direction:row;
+        justify-content: space-evenly;
+    }
+
+}
+
+
+

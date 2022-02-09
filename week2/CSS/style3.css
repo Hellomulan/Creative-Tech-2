@@ -1,0 +1,44 @@
+*{  
+    margin: 0;
+    padding: 0;
+
+}
+
+body.index3{
+    background: #242423;
+    font-family: tahoma;
+  }
+  .container.marketing{
+    display:grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-auto-flow: row;
+  }
+  
+  img{
+    width: 100%;
+    max-width: 100%;
+    height:auto;
+  }
+  .white-panel{
+    background: white;
+    padding: 10px;
+  }
+  .nav{
+    background: white;
+    height:50px;
+    padding:25px;
+    text-align:center;
+  }
+  .nav a{
+    text-decoration:none;
+    font-size:16px;
+    color:#4682B4;
+  }
+  .nav.left{
+    grid-column-start: 1;
+    grid-column-end: 3;  
+  }
+  .nav.right{
+    grid-column-start: 3;
+    grid-column-end: 5;  
+  }
