@@ -81,20 +81,22 @@ header .search .fa-search {
 }
 .banner .content {
     max-width: 1000px;
+    font-size: 2.5em;
+    color: #fff;
 }
 .banner .content h2 {
-    font-size: 2.5em;
-    color: #333;
+    font-size: 6em;
+    color: #fff;
     margin-bottom: 20px;
 }
 .banner .content p {
-    font-size: 1em;
-    color: #333;
+    font-size: 3em;
+    color: #fff;
 }
 .banner .content a {
     display: inline-block;
-    background: #434978;
-    color: #fff;
+    background: #fff;
+    color: #434978;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: 600;
