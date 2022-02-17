@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JavaScript</title>
+    <style>
+       
+        button.main-btn {
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+        }
+    </style>
+</head>
+<body id="body">
+
+    <button class="main-btn" id="triggerBtn"> Click ME!</button>
+    <h2 id="colorInfo"></h2>
+
+    <button class="main-btn" id="toggleBtn">Toggle ME!</button>
+    <img src="./img/1.jpeg" alt="qute quokka num1" id="quokkaIMG" >
+  
+    <script>
+       let trgBTN = document.getElementById("triggerBtn");
+       let docBody = document.getElementById ("body")
+       let clrInfo = document.getElementById ("colorInfo")
+
+       let toggleBtn = document.getElementById ("toggleBtn")
+       let quokkaIMG = document.getElementById ("quokkaIMG")
+
+       function QuokkaToggler(){
+           console.info(quokkaIMG)
+           console.info(quokkaIMG.src)
+           if(quokkaIMG.src == "qute quokka num1"){
+            quokkaIMG.src = "./img/2.jpeg"
+            quokkaIMG.alt = "qute quokka num2"
+        }
+
+           else {
+               quokkaIMG.src = "./img/1.jpeg"
+           quokkaIMG.alt = "qute quokka num1"
+        }
+           }
+
+       toggleBtn.addEventListener("click", QuokkaToggler)
+
+
+       trgBTN.addEventListener ("click", function(){
+           console.info(docBody)
+           let redComp = Math.round(Math.random()*255)
+           let greenComp = Math.round(Math.random()*255)
+           let blueComp = Math.round(Math.random()*255)
+           let colorString =  "rgb(" + redComp+ "," + greenComp + ", " + blueComp + ")"
+           console.info(colorString)
+           docBody.style.backgroundColor = colorString
+           clrInfo.innerText = colorString
+           
+
+       })
+    </script>
+</body>
+</html>

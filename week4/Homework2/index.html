@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TANAKA</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function thumbChange (num) {
+                
+                var thumb = "img/" + num + '.jpg';
+               document.getElementById("mainImg"). src = thumb;
+            }
+        </script>
+    </head>
+    <body>
+        <section>
+            <header>
+                <a href="#" class="logo">TANAKA_TATSUYA GALLERY</a>
+                <div class="toggle"></div>
+            </header>
+          <ul class="thumbs"> 
+              <li onclick="thumbChange(1)"><img src="img/1.jpg"></li>
+              <li onclick="thumbChange(2)"><img src="img/2.jpg"></li>
+              <li onclick="thumbChange(3)"><img src="img/3.jpg"></li>
+              <li onclick="thumbChange(4)"><img src="img/4.jpg"></li>
+              <li onclick="thumbChange(5)"><img src="img/5.jpg"></li>
+          </ul>
+          <div class="main">
+              <img id="mainImg" src="img/5.jpg">
+          </div>
+        </section>
+    </body>
+</html>

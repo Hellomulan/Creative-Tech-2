@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Shizuru', cursive;
+
+}
+section
+{
+    padding: 100px;
+    background: #111;
+    height:100vh;
+
+}
+section header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100px;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+section header .logo
+{
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+} 
+section header .toggle
+{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url(http://assets.stickpng.com/images/588a64e0d06f6719692a2d10.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+}
+section .container
+{
+    position: absolute;
+    display: flex;
+    height: calc(100% - 200px);
+    width: calc(100% - 200px);
+    z-index: 100;
+
+}
+section .container .box
+{
+    position: relative;
+    width: 25%;
+    height: 70%;
+    background: #ff0;
+    overflow: hidden;
+    border-right: 10px solid #111;
+}
