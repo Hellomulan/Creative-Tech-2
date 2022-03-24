@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="trigBTN">Get Data</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    
+    <script>
+        let ioURL = "https://io.adafruit.com/api/v2/Mulan0614/feeds/testsensorfeed/data?";
+        let iolimitQ = "limit="
+        let iolimitN = 100
+        //let ioInclude = "include=value"
+        let data
+        let slider
+        let ioST = "start_time="
+        let ioStval = "2020-03-13T15:00Z"
+        let ioET = "end_time="
+        let ioETval = "2022-03-13T23:00Z"
+        let values = []
+        let times = []
+
+        function preload(){
+            fetchData();
+            
+        }
+        function setup(){
+            createCanvas(800,800);
+            slider = createSlider(1,100, 10, 1);
+            slider.position(20,80);
+            slider.changed(fetchData);
+        }
+
+        function draw(){
+           // fill(random(255), random(255), random(255))
+            values.forEach((v,i)=> {
+                fill(times[i].getMinutes()*10, times[i].getHours()*10,times[1].getDay()*10)
+                circle(v, v, random(20, 60))
+                posx = fetchData
+            })
+        }
+
+        function fetchData(){
+            if(slider){
+                console.log(slider.value())
+                iolimitN = slider.value()
+            }
+            let assembleURL = ioURL+iolimitQ+iolimitN+"&"+ioST+ioStval+"&"+ioET+ioETval
+            console.log(assembleURL)
+            data = loadJSON(assembleURL, dataHandler, errorHandler);
+            
+        }
+
+
+        function dataHandler(APIdata){
+            values = []
+            time = []
+            
+            APIdata.forEach((element, i) => {
+               console.log(element.value);
+               values[i] = map(element.value, 0, 50, 0, width);
+               times[i]= new Date(element.created_at)
+               console.log(times[i])
+              
+            })
+
+        }
+        function errorHandler(APIerror){
+            console.error(APIerror);
+        }
+
+    </script>
+</body>
+</html>
