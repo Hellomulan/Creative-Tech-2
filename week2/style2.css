@@ -14,7 +14,7 @@
 .autogrid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 250px 250px 250px;
+    grid-template-rows: 250px auto auto;
     grid-auto-flow: row;
   }
   .item {
@@ -175,7 +175,7 @@ body.index3{
   img{
     width: 100%;
     max-width: 100%;
-    height:auto;
+    height:100%;
   }
   .white-panel{
     background: white;
@@ -183,14 +183,16 @@ body.index3{
   }
   .nav{
     background: white;
-    height:50px;
     padding:25px;
     text-align:center;
+    margin-bottom: 24px;
   }
+
   .nav a{
-    text-decoration:none;
-    font-size:16px;
+    /*text-decoration:none;*/
+    font-size:25px;
     color:#4682B4;
+    padding: 10px 20px;
   }
   .nav.left{
     grid-column-start: 1;
@@ -200,6 +202,8 @@ body.index3{
     grid-column-start: 3;
     grid-column-end: 5;  
   }
+
+  
 
 
 
